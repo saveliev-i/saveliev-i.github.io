@@ -7,8 +7,8 @@ const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer();
 renderer.setClearColor(0xCBEFFF);
 renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(window.innerWidth, window.innerHeight );
-document.body.appendChild(renderer.domElement );
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
 
 const pyramidgeometry = new THREE.CylinderGeometry(0, 0.8, 2, 4);
 const pyramidmaterial = new THREE.MeshLambertMaterial({ color: 0xF3FFE2 });
@@ -27,7 +27,7 @@ const spherematerial = new THREE.LineBasicMaterial({ color: 0x888888 });
 const spheremesh = new THREE.Line(spheregeometry, spherematerial);
 spheremesh.position.set(0.9, 0, -6);
 scene.add(spheremesh);
-
+			
 const circlegeometry = new THREE.CircleBufferGeometry(0.5);
 const circlematerial = new THREE.MeshStandardMaterial({ color: 0x098877, roughness: 90.0, metalness: 0.2 });
 const circlemesh = new THREE.Mesh(circlegeometry, circlematerial);
@@ -35,13 +35,12 @@ circlemesh.position.set(2, 0, -6);
 circlemesh.rotation.set(0, 0.5, 0);
 scene.add(circlemesh);
 
-var paraFunction = function (a, b, v) 
-{
-		var x = -5 + 5 * a;
-		var y = -5 + 5 * b;
-		var z = (Math.sin(a * Math.PI) + Math.sin(b * Math.PI)) * (-7);
-		v = new THREE.Vector3(x,y,z)
-		return v;
+var paraFunction = function (a, b, v) {
+	var x = -5 + 5 * a;
+	var y = -5 + 5 * b;
+	var z = (Math.sin(a * Math.PI) + Math.sin(b * Math.PI)) * (-7);
+	v = new THREE.Vector3(x, y, z);
+	return v;
 };
 
 const parageometry = new THREE.ParametricGeometry(paraFunction, 8, 8);
@@ -69,8 +68,8 @@ function animate() {
 	planegeometry.vertices[0].z = -25 + Math.sin(delta) * 50;
 	planegeometry.verticesNeedUpdate = true;
 
-	pyramid.rotation.y += 0.1;
-	
+	pyramidmesh.rotation.y += 0.1;
+
 	paramesh.rotation.x += 0.1;
 	paramesh.rotation.y += 0.1;
 
@@ -79,4 +78,3 @@ function animate() {
 }
 
 animate();
-
