@@ -1,6 +1,8 @@
 <html>
 		<head>
+				<meta charset="utf-8">
 				<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+				<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 				<script>
 						AFRAME.registerComponent('registerevents', {
 							init: function () {
@@ -17,13 +19,13 @@
 		<body>
 				<a-scene embedded arjs = 'trackingMethod: best;'>
 						<a-marker preset="hiro" registerevents>
-								<a-entity rotation="-90 0 0">
-										<a-sky color="black" radius=1500></a-sky>
-										<a-camera position="0 0 300" 
+								<a-entity scale="0.05 0.05 0.05">
+										<!--<a-sky color="black" radius=1500></a-sky>-->
+										<!--<a-camera position="0 0 300" 
 												cursor-visible="true" 
 												cursorscale="2" 
 												cursor-color="#0095DD" 
-												cursor-opacity="0.5"></a-camera>
+												cursor-opacity="0.5"></a-camera>-->
 										<a-entity geometry="primitive: sphere; radius: 20.510" 
 															material="src: textures/сонце.jpg; color: #FFFF00" 
 															animation="property": rotation: 0 360 0; loop: true; dur: 9000"
