@@ -1,32 +1,24 @@
 <html>
-  <head>
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  </head>
-  <body>
-    <a-scene physics embedded arjs>
-      <a-assets>
-        <img id="cylinderTexture" src="cyl.jpg">
-        <img id="planeTexture" src="plane.jpg">
-      </a-assets>
-      
-      <!-- Використання маркера з паттерном типу letterA -->
-      <a-marker type='pattern' url='pattern-letterA.patt'>
-        <!-- Анімація та 3D-об'єкти, які будуть відображатися на маркері -->
-        <a-entity animation="property: position; to: -6 -3 -0.1; dur: 6000; loop: true">
-          <a-entity id="cylinder" geometry="primitive: cylinder; radius: 1; height: 2" position="3 2.712 -8.051" rotation="90 30 45" material="src: #cylinderTexture"></a-entity>
-          <a-entity id="force-vector" line="start: 3 2.712 -8.051; end: 3 3.712 -8.051; color: crimson; scale: 0.2 0.2 1;"></a-entity>
-          <a-entity id="weight-vector" line="start: 3 2.712 -8.051; end: 3 2.712 -8.051; color: blue; scale: 0.2 0.2 1;"></a-entity>
-          <a-entity id="normal-vector" line="start: 3 2.712 -8.051; end: 2.23 6.532 -8.351; color: green; scale: 0.2 0.2 1;"></a-entity>
-          <a-entity id="friction-vector" line="start: 3 2.712 -8.051; end: 4.8 6.412 -8.051; color: yellow; scale: 0.2 0.2 1;"></a-entity>
-        </a-entity>
-      </a-marker>
-
-      <!-- Камера -->
-      <a-entity camera></a-entity>
-
-      <!-- Площина -->
-      <a-plane static-body width="10" height="10" rotation="-60 -90 0" position="0 0 -10" side="double" material="src: #planeTexture"></a-plane>
-    </a-scene>
-  </body>
+ <head>
+ <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+ <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+ </head>
+ <body>
+ <a-scene physics embedded arjs>
+ <a-assets>
+ <img id="cylinderTexture" src="cyl.jpg">
+ <img id="planeTexture" src="plane.jpg">
+ </a-assets>
+ <a-marker type='pattern' url='pattern-letterA.patt'>
+ <a-entity animation="property: position; to: -6 -3 -0.1; dur: 6000; loop: true">
+ <a-entity id="cylinder" geometry="primitive: cylinder; radius: 1; height: 2" position="3 2.712 -8.051" rotation="90 30 45" material="src: #cylinderTexture"></a-entity>
+ <a-entity id="force-vector" line="start: 3 2.712 -8.051; end: 3 3.712 -8.051; color: crimson; scale: 0.2 0.2 1;"></a-entity>
+ <a-entity id="weight-vector" line="start: 3 2.712 -8.051; end: 3 2.712 -8.051; color: blue; scale: 0.2 0.2 1;"></a-entity>
+ <a-entity id="normal-vector" line="start: 3 2.712 -8.051; end: 2.23 6.532 -8.351; color: green; scale: 0.2 0.2 1;"></a-entity>
+ <a-entity id="friction-vector" line="start: 3 2.712 -8.051; end: 4.8 6.412 -8.051; color: yellow; scale: 0.2 0.2 1;"></a-entity>
+ </a-entity>
+ <a-plane static-body width="10" height="10" rotation="-60 -90 0" position="0 0 -10" side="double" material="src: #planeTexture"></a-plane>
+ </a-marker>
+ </a-scene>
+ </body>
 </html>
